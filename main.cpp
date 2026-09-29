@@ -104,6 +104,10 @@ void imprimir()
         std::cout << "El inventario esta vacio."<<std::endl;
         return;
     }
+    std::cout << "=== INVENTARIO DE PRODUCTOS ==="<<std::endl; 
+
+    Nodo *actual = inicio;
+
 
    
 }

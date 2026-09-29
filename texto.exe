@@ -36,8 +36,4 @@ funcion 3 imprimir void imprimir()
 
 
 
-    if (inicio == nullptr)
-    {
-        std::cout << "El inventario esta vacio."<<std::endl;
-        return;
-    }
+   
