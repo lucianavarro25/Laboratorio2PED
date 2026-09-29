@@ -64,3 +64,33 @@ int main()
 
     return 0;
 }
+//primera funcion insertar inicio
+
+void insertarInicio()
+{
+    Nodo *nuevo = new Nodo;
+
+    cout << "\nINSERTAR PRODUCTO AL INICIO \n";
+
+    cout << "Codigo: ";
+    cin >> nuevo->producto.codigo;
+    cin.ignore();
+
+    cout << "Nombre: ";
+    getline(cin, nuevo->producto.nombre);
+
+    cout << "Precio: ";
+    cin >> nuevo->producto.precio;
+
+    nuevo->anterior = nullptr;
+    nuevo->siguiente = inicio;
+
+    if (inicio != nullptr)
+    {
+        inicio->anterior = nuevo;
+    }
+
+    inicio = nuevo;
+
+    cout << "Producto insertado correctamente.\n";
+}
