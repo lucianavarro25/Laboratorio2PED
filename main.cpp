@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Struct para almacenar los datos del producto
 struct Producto
 {
     int codigo;
@@ -11,7 +10,6 @@ struct Producto
     float precio;
 };
 
-// Struct Nodo - Representa cada nodo de la lista
 struct Nodo
 {
     Producto producto;
@@ -19,12 +17,11 @@ struct Nodo
     Nodo *anterior;
 };
 
-// Puntero global al primer nodo
 Nodo *inicio = nullptr;
 
-// Declaraciones de funciones
+// declaracion de funciones
 void insertarInicio();
-void insertarFinal();
+void eliminarIntermedio();
 void imprimir();
 
 int main()
@@ -33,12 +30,12 @@ int main()
 
     do
     {
-        cout << "\n=== Inventario de Productos ===\n";
+        cout << "\nINVENTARIO DE PRODUCTOS \n";
         cout << "1. Insertar al inicio\n";
-        cout << "2. Insertar al final\n";
+        cout << "2. Eliminar intermedio\n";
         cout << "3. Imprimir inventario\n";
         cout << "0. Salir\n";
-        cout << "Ingrese una opcion: ";
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion)
@@ -48,7 +45,7 @@ int main()
             break;
 
         case 2:
-            insertarFinal();
+            eliminarIntermedio();
             break;
 
         case 3:
@@ -66,37 +63,4 @@ int main()
     } while (opcion != 0);
 
     return 0;
-}
-
-// Insertar un producto al inicio de la lista
-void insertarInicio()
-{
-    Producto nuevoProducto;
-
-    cout << "\n--- Insertar producto al inicio ---\n";
-
-    cout << "Codigo: ";
-    cin >> nuevoProducto.codigo;
-    cin.ignore();
-
-    cout << "Nombre: ";
-    getline(cin, nuevoProducto.nombre);
-
-    cout << "Precio: ";
-    cin >> nuevoProducto.precio;
-
-    Nodo *nuevoNodo = new Nodo;
-
-    nuevoNodo->producto = nuevoProducto;
-    nuevoNodo->anterior = nullptr;
-    nuevoNodo->siguiente = inicio;
-
-    if (inicio != nullptr)
-    {
-        inicio->anterior = nuevoNodo;
-    }
-
-    inicio = nuevoNodo;
-
-    cout << "Producto agregado al inicio correctamente.\n";
 }
