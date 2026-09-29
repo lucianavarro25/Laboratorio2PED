@@ -1,0 +1,39 @@
+funcion 3 imprimir void imprimir()
+{
+    if (inicio == nullptr)
+    {
+        cout << "\nEl inventario esta vacio.\n";
+        return;
+    }
+
+    cout << "\n=== INVENTARIO DE PRODUCTOS ===\n";
+
+    Nodo *actual = inicio;
+
+    while (actual != nullptr)
+    {
+        cout << "\nCodigo: " << actual->producto.codigo << endl;
+        cout << "Nombre: " << actual->producto.nombre << endl;
+        cout << "Precio: $" << actual->producto.precio << endl;
+
+        actual = actual->siguiente;
+    }
+}
+
+
+ std::cout << "=== INVENTARIO DE PRODUCTOS ==="<<std::endl; 
+
+    Nodo *actual = inicio;
+
+    while (actual != nullptr)
+    {
+        cout << "\nCodigo: " << actual->producto.codigo << endl;
+        cout << "Nombre: " << actual->producto.nombre << endl;
+        cout << "Precio: $" << actual->producto.precio << endl;
+
+        actual = actual->siguiente;
+    }
+
+
+
+   

@@ -109,10 +109,21 @@ void eliminarIntermedio()
     cout << "Ingrese el codigo del producto: ";
     cin >> codigo;
 
+//FUNCION PARA IMPRIMIR LA LISTA
+void imprimir()
+{
+     if (inicio == nullptr)
+    {
+        std::cout << "El inventario esta vacio."<<std::endl;
+        return;
+    }
+    std::cout << " INVENTARIO DE PRODUCTOS "<<std::endl; 
+
     Nodo *actual = inicio;
 
     while (actual != nullptr)
     {
+<<<<<<< HEAD
         if (actual->producto.codigo == codigo)
         {
             if (actual == inicio || actual->siguiente == nullptr)
@@ -129,10 +140,25 @@ void eliminarIntermedio()
             cout << "Producto eliminado correctamente.\n";
             return;
         }
+=======
+        std::cout << "Codigo: " << actual->producto.codigo <<std:: endl;
+        std::cout << "Nombre: " << actual->producto.nombre <<std::endl;
+        std::cout << "Precio: $" << actual->producto.precio <<std::endl;
+>>>>>>> feature/funcion-imprimir
 
         actual = actual->siguiente;
     }
 
+<<<<<<< HEAD
     cout << "Producto no encontrado.\n";
 }
 
+=======
+
+   
+}
+
+
+
+
+>>>>>>> feature/funcion-imprimir
