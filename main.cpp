@@ -104,7 +104,7 @@ void eliminarIntermedio()
     }
   int codigo;
 
-    cout << "\n=== ELIMINAR PRODUCTO INTERMEDIO ===\n";
+    cout << "\n ELIMINAR PRODUCTO INTERMEDIO \n";
     cout << "Ingrese el codigo del producto: ";
     cin >> codigo;
 
