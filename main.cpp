@@ -94,3 +94,20 @@ void insertarInicio()
 
     cout << "Producto insertado correctamente.\n";
 }
+
+
+//FUNCION PARA IMPRIMIR LA LISTA
+void imprimir()
+{
+    if (inicio == nullptr)
+    {
+        std::cout << "El inventario esta vacio."<<std::endl;
+        return;
+    }
+
+   
+}
+
+
+
+
