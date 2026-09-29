@@ -99,7 +99,7 @@ void insertarInicio()
 //FUNCION PARA IMPRIMIR LA LISTA
 void imprimir()
 {
-    if (inicio == nullptr)
+     if (inicio == nullptr)
     {
         std::cout << "El inventario esta vacio."<<std::endl;
         return;
