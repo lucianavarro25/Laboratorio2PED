@@ -102,63 +102,64 @@ void eliminarIntermedio()
         cout << "\nEl inventario esta vacio.\n";
         return;
     }
+  int codigo;
 
-    int codigo;
-
-    cout << "\n ELIMINAR PRODUCTO INTERMEDIO \n";
+    cout << "\n=== ELIMINAR PRODUCTO INTERMEDIO ===\n";
     cout << "Ingrese el codigo del producto: ";
     cin >> codigo;
-
-//FUNCION PARA IMPRIMIR LA LISTA
-void imprimir()
-{
-     if (inicio == nullptr)
-    {
-        std::cout << "El inventario esta vacio."<<std::endl;
-        return;
-    }
-    std::cout << " INVENTARIO DE PRODUCTOS "<<std::endl; 
 
     Nodo *actual = inicio;
 
     while (actual != nullptr)
     {
-<<<<<<< HEAD
         if (actual->producto.codigo == codigo)
         {
+            // Verificar que el nodo sea intermedio
             if (actual == inicio || actual->siguiente == nullptr)
             {
-                cout << "El producto no es intermedio.\n";
+                cout << "\nEl producto seleccionado no es intermedio.\n";
                 return;
             }
 
+            // Conectar el nodo anterior con el siguiente
             actual->anterior->siguiente = actual->siguiente;
+
+            // Conectar el nodo siguiente con el anterior
             actual->siguiente->anterior = actual->anterior;
 
+            // Liberar memoria
             delete actual;
 
-            cout << "Producto eliminado correctamente.\n";
+            cout << "\nProducto eliminado correctamente.\n";
             return;
         }
-=======
-        std::cout << "Codigo: " << actual->producto.codigo <<std:: endl;
-        std::cout << "Nombre: " << actual->producto.nombre <<std::endl;
-        std::cout << "Precio: $" << actual->producto.precio <<std::endl;
->>>>>>> feature/funcion-imprimir
 
         actual = actual->siguiente;
     }
 
-<<<<<<< HEAD
-    cout << "Producto no encontrado.\n";
-}
-
-=======
-
-   
+    cout << "\nProducto no encontrado.\n";
 }
 
 
+//FUNCION PARA IMPRIMIR LA LISTA
+void imprimir()
+{
+    if (inicio == nullptr)
+    {
+        cout << "El inventario esta vacio." << endl;
+        return;
+    }
 
+    cout << "\nINVENTARIO DE PRODUCTOS" << endl;
 
->>>>>>> feature/funcion-imprimir
+    Nodo *actual = inicio;
+
+    while (actual != nullptr)
+    {
+        cout << "\nCodigo: " << actual->producto.codigo << endl;
+        cout << "Nombre: " << actual->producto.nombre << endl;
+        cout << "Precio: $" << actual->producto.precio << endl;
+
+        actual = actual->siguiente;
+    }
+}
