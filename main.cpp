@@ -108,6 +108,15 @@ void imprimir()
 
     Nodo *actual = inicio;
 
+    while (actual != nullptr)
+    {
+        std::cout << "Codigo: " << actual->producto.codigo <<std:: endl;
+        std::cout << "Nombre: " << actual->producto.nombre <<std::endl;
+        std::cout << "Precio: $" << actual->producto.precio <<std::endl;
+
+        actual = actual->siguiente;
+    }
+
 
    
 }
