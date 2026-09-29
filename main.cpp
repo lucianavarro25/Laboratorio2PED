@@ -94,3 +94,44 @@ void insertarInicio()
 
     cout << "Producto insertado correctamente.\n";
 }
+
+void eliminarIntermedio()
+{
+    if (inicio == nullptr)
+    {
+        cout << "\nEl inventario esta vacio.\n";
+        return;
+    }
+
+    int codigo;
+
+    cout << "\n ELIMINAR PRODUCTO INTERMEDIO \n";
+    cout << "Ingrese el codigo del producto: ";
+    cin >> codigo;
+
+    Nodo *actual = inicio;
+
+    while (actual != nullptr)
+    {
+        if (actual->producto.codigo == codigo)
+        {
+            if (actual == inicio || actual->siguiente == nullptr)
+            {
+                cout << "El producto no es intermedio.\n";
+                return;
+            }
+
+            actual->anterior->siguiente = actual->siguiente;
+            actual->siguiente->anterior = actual->anterior;
+
+            delete actual;
+
+            cout << "Producto eliminado correctamente.\n";
+            return;
+        }
+
+        actual = actual->siguiente;
+    }
+
+    cout << "Producto no encontrado.\n";
+}
